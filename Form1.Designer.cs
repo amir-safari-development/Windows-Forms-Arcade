@@ -29,11 +29,26 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            timer = new System.Windows.Forms.Timer(components);
+            SuspendLayout();
+            // 
+            // timer
+            // 
+            timer.Interval = 20;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1181, 750);
+            Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timer;
     }
 }
