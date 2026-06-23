@@ -63,6 +63,26 @@ namespace Arcade_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bullet_Enemy {
+            get {
+                object obj = ResourceManager.GetObject("Bullet Enemy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bullet_Player {
+            get {
+                object obj = ResourceManager.GetObject("Bullet Player", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Enemy_Scout {
             get {
                 object obj = ResourceManager.GetObject("Enemy Scout", resourceCulture);
