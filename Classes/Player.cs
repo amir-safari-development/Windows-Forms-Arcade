@@ -93,7 +93,6 @@ internal class Player : PictureBox
         int startY = this.Location.Y - 35;
 
         PlayerBullet bullet = new(this, dirX, dirY, 15);
-        MainForm.Instance.Controls.Add(bullet);
         bullets.Add(bullet);
     }
 }

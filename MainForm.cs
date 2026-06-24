@@ -19,16 +19,15 @@ public partial class MainForm : System.Windows.Forms.Form
         this.KeyDown += MainFormKeyDown;
         this.KeyUp += MainFormKeyUp;
 
+        this.Paint += MainFormPaint;
+
         player = new Player(Properties.Resources.Player_1);
-        this.Controls.Add(player);
 
         // test
         Enemy enemy1 = new StandardEnemy(100);
-        this.Controls.Add(enemy1);
         Enemy.enemies.Add(enemy1);
 
         Enemy enemy2 = new TankEnemy(100, 50);
-        this.Controls.Add(enemy2);
         Enemy.enemies.Add(enemy2);
     }
 
@@ -44,7 +43,6 @@ public partial class MainForm : System.Windows.Forms.Form
 
             if (bullet.IsOutOfBounds())
             {
-                this.Controls.Remove(bullet);
                 bullet.Dispose();
                 Player.bullets.RemoveAt(i);
 
@@ -73,7 +71,6 @@ public partial class MainForm : System.Windows.Forms.Form
 
                 if (currentEnemy.HealthPoint <= 0)
                 {
-                    this.Controls.Remove(currentEnemy);
                     Enemy.enemies.RemoveAt(i);
                     currentEnemy.Dispose();
 
@@ -90,7 +87,6 @@ public partial class MainForm : System.Windows.Forms.Form
 
                 if (currentBullet.Bounds.IntersectsWith(currentEnemy.Bounds))
                 {
-                    this.Controls.Remove(currentBullet);
                     currentBullet.Dispose();
                     Player.bullets.RemoveAt(j);
                     currentEnemy.HealthPoint--;
@@ -98,7 +94,6 @@ public partial class MainForm : System.Windows.Forms.Form
                     if (currentEnemy.HealthPoint <= 0)
                     {
                         isEnemyDead = true;
-                        this.Controls.Remove(currentEnemy);
                         currentEnemy.Dispose();
                         Enemy.enemies.RemoveAt(i);
                     }
@@ -106,7 +101,7 @@ public partial class MainForm : System.Windows.Forms.Form
             }
         }
 
-
+        this.Invalidate();
     }
 
     private void MainFormKeyDown(object sender, KeyEventArgs e)
@@ -117,5 +112,19 @@ public partial class MainForm : System.Windows.Forms.Form
     private void MainFormKeyUp(object sender, KeyEventArgs e)
     {
         player.KeyUp(e);
+    }
+
+    private void MainFormPaint(object sender, PaintEventArgs e)
+    {
+        e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+
+        if (player != null &&player.HealthPoint > 0)
+            e.Graphics.DrawImage(player.Image, player.Bounds);
+        
+        foreach(var enemy in Enemy.enemies)
+            e.Graphics.DrawImage(enemy.Image, enemy.Bounds);
+
+        foreach(var bullet in Player.bullets) 
+            e.Graphics.DrawImage(bullet.Image, bullet.Bounds);
     }
 }
