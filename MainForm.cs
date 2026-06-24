@@ -31,7 +31,7 @@ public partial class MainForm : System.Windows.Forms.Form
 
             bullet.Move();
 
-            if (bullet.IsOutofBounds(this))
+            if (bullet.IsOutOfBounds(this))
             {
                 this.Controls.Remove(bullet);
                 bullet.Dispose();

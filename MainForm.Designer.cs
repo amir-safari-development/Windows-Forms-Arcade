@@ -35,15 +35,11 @@
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // timer
@@ -99,7 +95,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.Enemy_Tank;
-            pictureBox6.Location = new Point(1045, 12);
+            pictureBox6.Location = new Point(666, 12);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(125, 75);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -107,36 +103,12 @@
             pictureBox6.TabStop = false;
             pictureBox6.Tag = "enemyTank";
             // 
-            // pictureBox7
-            // 
-            pictureBox7.Image = Properties.Resources.Bullet_Player;
-            pictureBox7.Location = new Point(942, 210);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(10, 35);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 2;
-            pictureBox7.TabStop = false;
-            pictureBox7.Tag = "bulletPlayer";
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = Properties.Resources.Bullet_Enemy;
-            pictureBox8.Location = new Point(997, 210);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(10, 35);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 2;
-            pictureBox8.TabStop = false;
-            pictureBox8.Tag = "bulletEnemy";
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1182, 853);
-            Controls.Add(pictureBox8);
-            Controls.Add(pictureBox7);
             Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
@@ -151,8 +123,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
         }
 
@@ -164,7 +134,5 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
     }
 }

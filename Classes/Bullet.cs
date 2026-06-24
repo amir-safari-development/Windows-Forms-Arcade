@@ -1,47 +1,69 @@
 ﻿namespace Arcade_Game;
 
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
 internal abstract class Bullet : PictureBox
 {
-    protected int speed;
+    protected double exactX;
+    protected double exactY;
+    protected double moveSpeedX;
+    protected double moveSpeedY;
 
-    public Bullet(int speed, int startX, int startY)
+    public Bullet(Control shooter, int dirX, int dirY, int speed)
     {
-        this.speed = speed;
-        this.Size = new Size(10, 35);
-        this.Location = new Point(startX, startY);
+        this.Size = new Size(15, 15);
         this.SizeMode = PictureBoxSizeMode.StretchImage;
+        this.BackColor = Color.Transparent;
+
+        double actualSpeed = (dirX != 0 && dirY != 0) ? (speed / Math.Sqrt(2)) : speed;
+
+        this.moveSpeedX = dirX * actualSpeed;
+        this.moveSpeedY = -dirY * actualSpeed;
+
+        double shooterCenterX = shooter.Left + (shooter.Width / 2.0);
+        double shooterCenterY = shooter.Top + (shooter.Height / 2.0);
+
+        this.exactX = shooterCenterX + ((shooter.Width / 2.0) * dirX) - (this.Width / 2.0);
+        this.exactY = shooterCenterY - ((shooter.Height / 2.0) * dirY) - (this.Height / 2.0);
+
+        this.Left = (int)Math.Round(this.exactX);
+        this.Top = (int)Math.Round(this.exactY);
     }
 
-    public new abstract void Move();
-    public bool IsOutofBounds(Form mainForm)
+    public void Move()
     {
-        if (this.Location.Y + this.Size.Height < 0 || this.Location.Y > mainForm.ClientSize.Height) return true;
-        return false;
+        this.exactX += moveSpeedX;
+        this.exactY += moveSpeedY;
+
+        this.Left = (int)Math.Round(this.exactX);
+        this.Top = (int)Math.Round(this.exactY);
+    }
+
+    public bool IsOutOfBounds(Form mainForm)
+    {
+        return (this.Right < 0 ||
+                this.Left > mainForm.ClientSize.Width ||
+                this.Bottom < 0 ||
+                this.Top > mainForm.ClientSize.Height);
     }
 }
 
 class PlayerBullet : Bullet
 {
-    public PlayerBullet(int speed, int startX, int startY) : base(speed, startX, startY)
+    public PlayerBullet(Control playerShip, int dirX, int dirY, int speed)
+        : base(playerShip, dirX, dirY, speed)
     {
         this.Image = Properties.Resources.Bullet_Player;
-    }
-
-    public override void Move()
-    {
-        this.Top -= this.speed;
     }
 }
 
 class EnemyBullet : Bullet
 {
-    public EnemyBullet(int speed, int startX, int startY) : base(speed, startX, startY)
+    public EnemyBullet(Control enemyShip, int dirX, int dirY, int speed)
+        : base(enemyShip, dirX, dirY, speed)
     {
         this.Image = Properties.Resources.Bullet_Enemy;
-    }
-
-    public override void Move()
-    {
-        this.Top += this.speed;
     }
 }

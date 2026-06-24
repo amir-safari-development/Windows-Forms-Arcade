@@ -9,7 +9,7 @@ internal class Player : PictureBox
     public static List<PlayerBullet> bullets = new();
 
     private static DateTime lastTimeShot = DateTime.MinValue;
-    private const int CoolDown = 1000;
+    private const int CoolDown = 500;
 
     bool goLeft;
     bool goRight;
@@ -44,7 +44,7 @@ internal class Player : PictureBox
         if (e.KeyCode == Keys.Right) goRight = true;
         if (e.KeyCode == Keys.Up) goUp = true;
         if (e.KeyCode == Keys.Down) goDown = true;
-        if (e.KeyCode == Keys.Space && Player.CanShoot()) Shoot();
+        if (e.KeyCode == Keys.Space && Player.CanShoot()) Shoot(0, 1);
     }
 
     public void KeyUp(KeyEventArgs e)
@@ -55,7 +55,7 @@ internal class Player : PictureBox
         if (e.KeyCode == Keys.Down) goDown = false;
     }
 
-    public void Move()
+    public new void Move()
     {
         if (goLeft && this.Location.X >= 15) this.Left -= Speed;
         if (goRight && this.Location.X <= windowWidth - 90 - 15 ) this.Left += Speed;
@@ -74,12 +74,12 @@ internal class Player : PictureBox
         return false;
     }
 
-    private void Shoot()
+    private void Shoot(int dirX, int dirY)
     {
         int startX = this.Location.X + this.Size.Width / 2 - 5;
         int startY = this.Location.Y - 35;
 
-        PlayerBullet bullet = new(15, startX, startY);
+        PlayerBullet bullet = new(this, dirX, dirY, 15);
         mainForm.Controls.Add(bullet);
         bullets.Add(bullet);
     }
