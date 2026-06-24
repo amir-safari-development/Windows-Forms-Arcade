@@ -3,9 +3,11 @@ namespace Arcade_Game;
 public partial class MainForm : System.Windows.Forms.Form
 {
     Player player;
+    public static MainForm Instance { get; private set; }
 
     public MainForm()
     {
+        Instance = this;
         InitializeComponent();
         this.DoubleBuffered = true;
 
@@ -17,7 +19,7 @@ public partial class MainForm : System.Windows.Forms.Form
         this.KeyDown += MainFormKeyDown;
         this.KeyUp += MainFormKeyUp;
 
-        player = new(Properties.Resources.Player_1, this);
+        player = new Player(Properties.Resources.Player_1);
         this.Controls.Add(player);
 
         Enemy enemy = new StandardEnemy(100);
@@ -35,7 +37,7 @@ public partial class MainForm : System.Windows.Forms.Form
 
             bullet.Move();
 
-            if (bullet.IsOutOfBounds(this))
+            if (bullet.IsOutOfBounds())
             {
                 this.Controls.Remove(bullet);
                 bullet.Dispose();
@@ -60,7 +62,7 @@ public partial class MainForm : System.Windows.Forms.Form
                 if (player.HealthPoint <= 0)
                 {
                     // game-over
-                    timer.Stop();
+                    Timer.Stop();
                     break;
                 }
 

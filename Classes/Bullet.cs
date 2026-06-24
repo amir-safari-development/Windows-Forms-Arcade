@@ -41,12 +41,12 @@ internal abstract class Bullet : PictureBox
         this.Top = (int)Math.Round(this.exactY);
     }
 
-    public bool IsOutOfBounds(Form mainForm)
+    public bool IsOutOfBounds()
     {
         return (this.Right < 0 ||
-                this.Left > mainForm.ClientSize.Width ||
+                this.Left > MainForm.Instance.ClientSize.Width ||
                 this.Bottom < 0 ||
-                this.Top > mainForm.ClientSize.Height);
+                this.Top > MainForm.Instance.ClientSize.Height);
     }
 }
 

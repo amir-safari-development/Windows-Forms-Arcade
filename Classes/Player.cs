@@ -5,7 +5,6 @@ namespace Arcade_Game;
 
 internal class Player : PictureBox
 {
-    static Form mainForm;
     public static List<PlayerBullet> bullets = new();
 
     private static DateTime lastTimeShot = DateTime.MinValue;
@@ -25,11 +24,10 @@ internal class Player : PictureBox
     public int HealthPoint { get; set; } = 3;
 
 
-    public Player(Image skin, Form mainForm)
+    public Player(Image skin)
     {
-        Player.mainForm = mainForm;
-        windowWidth = mainForm.ClientSize.Width;
-        windowHeight = mainForm.ClientSize.Height;
+        windowWidth = MainForm.Instance.ClientSize.Width;
+        windowHeight = MainForm.Instance.ClientSize.Height;
 
         this.Image = skin;
         this.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -81,7 +79,7 @@ internal class Player : PictureBox
         int startY = this.Location.Y - 35;
 
         PlayerBullet bullet = new(this, dirX, dirY, 15);
-        mainForm.Controls.Add(bullet);
+        MainForm.Instance.Controls.Add(bullet);
         bullets.Add(bullet);
     }
 }

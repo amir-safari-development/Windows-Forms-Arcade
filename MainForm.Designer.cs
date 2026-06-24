@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            timer = new System.Windows.Forms.Timer(components);
+            Timer = new System.Windows.Forms.Timer(components);
             pictureBox6 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
-            // timer
+            // Timer
             // 
-            timer.Enabled = true;
-            timer.Interval = 20;
-            timer.Tick += TimerEvent;
+            Timer.Enabled = true;
+            Timer.Interval = 20;
+            Timer.Tick += TimerEvent;
             // 
             // pictureBox6
             // 
@@ -68,7 +68,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer Timer;
         private PictureBox pictureBox6;
     }
 }
