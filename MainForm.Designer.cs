@@ -99,7 +99,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.Enemy_Tank;
-            pictureBox6.Location = new Point(94, 47);
+            pictureBox6.Location = new Point(1045, 12);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(125, 75);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -142,6 +142,8 @@
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "MainForm";
             Text = "Space Invaders";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
