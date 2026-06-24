@@ -6,14 +6,13 @@ internal abstract class Enemy : PictureBox
 {
     public static List<Enemy> enemies = new();
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public int HealthPoint { get; set; } = 2;
+    public virtual int HealthPoint { get; set; } = 2;
 
-    public Enemy(int startX)
+    public Enemy()
     {
         this.Size = new Size(60, 60);
         this.SizeMode = PictureBoxSizeMode.StretchImage;
         this.BackColor = Color.Transparent;
-        this.Location = new Point(startX - this.Width / 2, 100);
     }
 
     public new abstract void Move();
@@ -21,9 +20,10 @@ internal abstract class Enemy : PictureBox
 
 class StandardEnemy : Enemy
 {
-    public StandardEnemy(int startX): base(startX)
+    public StandardEnemy(int startX) : base()
     {
         this.Image = Properties.Resources.Enemy_Standard;
+        this.Location = new Point(startX - this.Width / 2, 100);
     }
 
     public override void Move()
@@ -34,8 +34,7 @@ class StandardEnemy : Enemy
 
 class ShooterEnemy : Enemy
 {
-    public ShooterEnemy(int startX, int startY) : base(startX)
-    {
+    public ShooterEnemy(int startX, int startY) : base() { 
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
         this.Image = Properties.Resources.Enemy_Standard;
     }
@@ -60,3 +59,29 @@ class ShooterEnemy : Enemy
 //{
 
 //}
+
+class TankEnemy : Enemy
+{
+    public override int HealthPoint { get; set; } = 6;
+
+    private int invert = 1;
+    public TankEnemy(int startX, int startY) : base()
+    {
+        this.Image = Properties.Resources.Enemy_Tank;
+        this.Size = new Size(125, 75);
+        this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
+    }
+
+    public override void Move()
+    {
+        if (this.Right > MainForm.Instance.ClientSize.Width) invert = -1;
+        else if (this.Left < 0) invert = 1;
+
+        this.Left += 2 * invert;
+    }
+
+    public void Shoot()
+    {
+
+    }
+}

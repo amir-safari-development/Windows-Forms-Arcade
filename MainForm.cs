@@ -22,9 +22,14 @@ public partial class MainForm : System.Windows.Forms.Form
         player = new Player(Properties.Resources.Player_1);
         this.Controls.Add(player);
 
-        Enemy enemy = new StandardEnemy(100);
-        this.Controls.Add(enemy);
-        Enemy.enemies.Add(enemy);
+        // test
+        Enemy enemy1 = new StandardEnemy(100);
+        this.Controls.Add(enemy1);
+        Enemy.enemies.Add(enemy1);
+
+        Enemy enemy2 = new TankEnemy(100, 50);
+        this.Controls.Add(enemy2);
+        Enemy.enemies.Add(enemy2);
     }
 
     private void TimerEvent(object sender, EventArgs e)
@@ -54,7 +59,7 @@ public partial class MainForm : System.Windows.Forms.Form
             Enemy currentEnemy = Enemy.enemies[i];
             currentEnemy.Move();
 
-            if (currentEnemy.Bounds.IntersectsWith(player.Bounds))
+            if (currentEnemy.Bounds.IntersectsWith(player.Bounds) && player.CanGetHitByImpact())
             {
                 player.HealthPoint--;
                 currentEnemy.HealthPoint--;

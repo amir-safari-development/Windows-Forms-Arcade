@@ -7,8 +7,11 @@ internal class Player : PictureBox
 {
     public static List<PlayerBullet> bullets = new();
 
-    private static DateTime lastTimeShot = DateTime.MinValue;
+    private DateTime lastTimeShot = DateTime.MinValue;
     private const int CoolDown = 500;
+
+    private DateTime lastTimeImpactWithEnemy = DateTime.MinValue;
+    private const int DelayAfterImpact = 500;
 
     bool goLeft;
     bool goRight;
@@ -43,7 +46,7 @@ internal class Player : PictureBox
         if (e.KeyCode == Keys.Right) goRight = true;
         if (e.KeyCode == Keys.Up) goUp = true;
         if (e.KeyCode == Keys.Down) goDown = true;
-        if (e.KeyCode == Keys.Space && Player.CanShoot()) Shoot(0, 1);
+        if (e.KeyCode == Keys.Space && this.CanShoot()) Shoot(0, 1);
     }
 
     public void KeyUp(KeyEventArgs e)
@@ -62,11 +65,22 @@ internal class Player : PictureBox
         if (goDown && this.Location.Y <= windowHeight - 90 - 15) this.Top += Speed;
     }
 
-    public static bool CanShoot()
+    public bool CanShoot()
     {
-        if ((DateTime.Now - lastTimeShot).TotalMilliseconds >= CoolDown)
+        if ((DateTime.Now - this.lastTimeShot).TotalMilliseconds >= CoolDown)
         {
-            lastTimeShot = DateTime.Now;
+            this.lastTimeShot = DateTime.Now;
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool CanGetHitByImpact()
+    {
+        if ((DateTime.Now - this.lastTimeImpactWithEnemy).TotalMilliseconds >= DelayAfterImpact)
+        {
+            this.lastTimeImpactWithEnemy = DateTime.Now;
             return true;
         }
 
