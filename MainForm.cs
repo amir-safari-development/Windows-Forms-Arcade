@@ -29,6 +29,9 @@ public partial class MainForm : System.Windows.Forms.Form
 
         Enemy enemy2 = new TankEnemy(100, 50);
         Enemy.enemies.Add(enemy2);
+
+        Enemy enemy3 = new TerroristEnemy(100, 200, player);
+        Enemy.enemies.Add(enemy3);
     }
 
     private void TimerEvent(object sender, EventArgs e)
