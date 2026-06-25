@@ -7,6 +7,8 @@ internal class Player : PictureBox
 {
     public static List<PlayerBullet> bullets = new();
 
+    public static Player Instance { get; private set; }
+
     private DateTime lastTimeShot = DateTime.MinValue;
     private const int CoolDown = 500;
 
@@ -38,13 +40,14 @@ internal class Player : PictureBox
                 _HP = 0;
 
                 MainForm.Instance.Timer.Stop();
+                this.Dispose();
             }
         }
     }
 
-
     public Player(Image skin)
     {
+        Instance = this;
         windowWidth = MainForm.Instance.ClientSize.Width;
         windowHeight = MainForm.Instance.ClientSize.Height;
 

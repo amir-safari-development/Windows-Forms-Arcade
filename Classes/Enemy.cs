@@ -18,6 +18,8 @@ internal abstract class Enemy : PictureBox
     }
 
     public new abstract void Move();
+
+    public virtual void Shoot() { }
 }
 
 class StandardEnemy : Enemy
@@ -63,7 +65,7 @@ class ShooterEnemy : Enemy
         return false;
     }
 
-    public void Shoot()
+    public override void Shoot()
     {
         if (!this.CanShoot()) return;
 
@@ -106,21 +108,22 @@ class ScoutEnemy : Enemy
 
 class TerroristEnemy : Enemy
 {
-    Player player;
     private int speed { get; set; } = 2;
     public override int HealthPoint { get; set; } = 1;
-    public TerroristEnemy(int startX, int startY, Player player) : base() {
+    public TerroristEnemy(int startX, int startY) : base() {
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
         this.Image = Properties.Resources.Enemy_Terrorist;
-        this.player = player;
     }
 
     public override void Move()
     {
-        int diffX = player.Left - this.Left;
-        int diffY = player.Top - this.Top;
+        int diffX = Player.Instance.Left - this.Left;
+        int diffY = Player.Instance.Top - this.Top;
 
         double diagonal = Math.Sqrt(Math.Pow(diffX, 2) + Math.Pow(diffY, 2));
+
+        if (diagonal == 0) return;
+
         double k = speed / diagonal;
 
         this.Left += (int)Math.Round(diffX * k);
@@ -163,7 +166,7 @@ class TankEnemy : Enemy
         return false;
     }
 
-    public void Shoot()
+    public override void Shoot()
     {
         if (!this.CanShoot()) return;
 

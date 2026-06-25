@@ -5,12 +5,6 @@ public partial class MainForm : System.Windows.Forms.Form
     Player player;
     public static MainForm Instance { get; private set; }
 
-    // test
-    ShooterEnemy shooterEnemy = new ShooterEnemy(30, 400);
-    TankEnemy tankEnemy = new TankEnemy(100, 50);
-    ScoutEnemy scoutenemy = new ScoutEnemy(60, 60);
-    // test
-
     public MainForm()
     {
         Instance = this;
@@ -30,24 +24,17 @@ public partial class MainForm : System.Windows.Forms.Form
         player = new Player(Properties.Resources.Player_1);
 
         // test
-        Enemy enemy1 = new StandardEnemy(100);
-        Enemy.enemies.Add(enemy1);
-
-        Enemy.enemies.Add(tankEnemy);
-        Enemy.enemies.Add(shooterEnemy);
-        Enemy.enemies.Add(scoutenemy);
-
-        Enemy enemy3 = new TerroristEnemy(100, 200, player);
-        Enemy.enemies.Add(enemy3);
+        Enemy.enemies.Add(new StandardEnemy(100));
+        Enemy.enemies.Add(new TankEnemy(100, 50));
+        Enemy.enemies.Add(new ShooterEnemy(30, 400));
+        Enemy.enemies.Add(new ScoutEnemy(60, 60));
+        Enemy.enemies.Add(new TerroristEnemy(100, 200));
         // test
     }
 
     private void TimerEvent(object sender, EventArgs e)
     {
         player.Move();
-
-        shooterEnemy.Shoot();
-        tankEnemy.Shoot();
 
         for (int i = Player.bullets.Count - 1; i >= 0; i--)
         {
@@ -95,6 +82,7 @@ public partial class MainForm : System.Windows.Forms.Form
 
             Enemy currentEnemy = Enemy.enemies[i];
             currentEnemy.Move();
+            currentEnemy.Shoot();
 
             if (currentEnemy.Bounds.IntersectsWith(player.Bounds) && player.CanGetHitByImpact())
             {
