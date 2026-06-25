@@ -68,6 +68,7 @@
             about.TabIndex = 2;
             about.Text = "About";
             about.UseVisualStyleBackColor = false;
+            about.Click += about_Click;
             // 
             // Exit
             // 
@@ -79,6 +80,7 @@
             Exit.TabIndex = 3;
             Exit.Text = "Exit";
             Exit.UseVisualStyleBackColor = false;
+            Exit.Click += Exit_Click;
             // 
             // option
             // 

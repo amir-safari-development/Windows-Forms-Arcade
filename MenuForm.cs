@@ -27,5 +27,18 @@ namespace Arcade_Game
             game.Show();
             this.Hide();
         }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void about_Click(object sender, EventArgs e)
+        {
+            About page = new About();
+
+            page.Show();
+            this.Hide();
+        }
     }
 }
