@@ -23,8 +23,24 @@ internal class Player : PictureBox
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public int Speed { get; set; } = 10;
+
+    private int _HP = 3;
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-    public int HealthPoint { get; set; } = 3;
+    public int HealthPoint
+    {
+        get => _HP;
+        set
+        {
+            _HP = value;
+
+            if (_HP <= 0)
+            {
+                _HP = 0;
+
+                MainForm.Instance.Timer.Stop();
+            }
+        }
+    }
 
 
     public Player(Image skin)

@@ -5,9 +5,11 @@ public partial class MainForm : System.Windows.Forms.Form
     Player player;
     public static MainForm Instance { get; private set; }
 
+    // test
     ShooterEnemy shooterEnemy = new ShooterEnemy(30, 400);
     TankEnemy tankEnemy = new TankEnemy(100, 50);
-
+    ScoutEnemy scoutenemy = new ScoutEnemy(60, 60);
+    // test
 
     public MainForm()
     {
@@ -33,10 +35,11 @@ public partial class MainForm : System.Windows.Forms.Form
 
         Enemy.enemies.Add(tankEnemy);
         Enemy.enemies.Add(shooterEnemy);
+        Enemy.enemies.Add(scoutenemy);
 
         Enemy enemy3 = new TerroristEnemy(100, 200, player);
         Enemy.enemies.Add(enemy3);
-
+        // test
     }
 
     private void TimerEvent(object sender, EventArgs e)
@@ -79,13 +82,6 @@ public partial class MainForm : System.Windows.Forms.Form
             {
                 player.HealthPoint--;
 
-                if (player.HealthPoint <= 0)
-                {
-                    // game-over
-                    Timer.Stop();
-                    break;
-                }
-
                 bullet.Dispose();
                 Enemy.bullets.RemoveAt(i);
 
@@ -104,13 +100,6 @@ public partial class MainForm : System.Windows.Forms.Form
             {
                 player.HealthPoint--;
                 currentEnemy.HealthPoint--;
-
-                if (player.HealthPoint <= 0)
-                {
-                    // game-over
-                    Timer.Stop();
-                    break;
-                }
 
                 if (currentEnemy.HealthPoint <= 0)
                 {

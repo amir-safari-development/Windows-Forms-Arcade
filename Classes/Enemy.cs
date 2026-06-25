@@ -72,10 +72,37 @@ class ShooterEnemy : Enemy
     }
 }
 
-//class ScoutEnemy : Enemy
-//{
+class ScoutEnemy : Enemy
+{
+    private int speed { get; set; } = 3;
+    private int invert = 1;
 
-//}
+    private static readonly Random rand = new();
+    private DateTime lastInvertTime = DateTime.Now;
+
+    public ScoutEnemy(int startX, int startY) : base()
+    {
+        this.Image = Properties.Resources.Enemy_Scout;
+        this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
+    }
+
+    public override void Move()
+    {
+        if ((DateTime.Now - lastInvertTime).TotalMilliseconds >= 1000)
+        {
+            invert = rand.Next(0, 2) == 0 ? 1 : -1;
+            lastInvertTime = DateTime.Now;
+        }
+
+        if (this.Right > MainForm.Instance.ClientSize.Width) invert = -1;
+        else if (this.Left < 0) invert = 1;
+
+        int step = (int)Math.Round(speed / Math.Sqrt(2));
+
+        this.Top += step;
+        this.Left += invert * step;
+    }
+}
 
 class TerroristEnemy : Enemy
 {
