@@ -55,7 +55,7 @@ class PlayerBullet : Bullet
     public PlayerBullet(Control playerShip, int dirX, int dirY, int speed)
         : base(playerShip, dirX, dirY, speed)
     {
-        this.Image = Properties.Resources.Bullet_Player;
+        this.Image = GameAssets.BulletPlayer;
     }
 }
 
@@ -64,6 +64,6 @@ class EnemyBullet : Bullet
     public EnemyBullet(Control enemyShip, int dirX, int dirY, int speed)
         : base(enemyShip, dirX, dirY, speed)
     {
-        this.Image = Properties.Resources.Bullet_Enemy;
+        this.Image = GameAssets.BulletEnemy;
     }
 }

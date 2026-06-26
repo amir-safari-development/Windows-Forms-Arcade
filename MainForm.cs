@@ -24,7 +24,7 @@ public partial class MainForm : System.Windows.Forms.Form
 
         this.Paint += MainFormPaint;
 
-        player = new Player(Properties.Resources.Player_1);
+        player = new Player(GameAssets.SkinPlayer1);
 
         // test
         Enemy.enemies.Add(new StandardEnemy("gold", 5,100));
