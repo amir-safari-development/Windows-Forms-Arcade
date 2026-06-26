@@ -2,9 +2,6 @@ namespace Arcade_Game;
 
 public partial class MainForm : System.Windows.Forms.Form
 {
-    public int TotalSilverCoinValues = 0;
-    public int TotalGoldCoinValues = 0;
-
     Player player;
     public static MainForm Instance { get; private set; }
 
@@ -27,11 +24,11 @@ public partial class MainForm : System.Windows.Forms.Form
         player = new Player(GameAssets.SkinPlayer1);
 
         // test
-        Enemy.enemies.Add(new StandardEnemy("gold", 5,100));
-        Enemy.enemies.Add(new TankEnemy("gold", 1, 100, 50));
-        Enemy.enemies.Add(new ShooterEnemy("silver", 5, 30, 400));
-        Enemy.enemies.Add(new ScoutEnemy("silver", 1, 60, 60));
-        Enemy.enemies.Add(new TerroristEnemy("gold", 5, 100, 200));
+        Enemy.enemies.Add(new StandardEnemy(100, new(5, CoinKind.Gold)));
+        Enemy.enemies.Add(new TankEnemy(100, 50, new(1, CoinKind.Gold)));
+        Enemy.enemies.Add(new ShooterEnemy(30, 400, new(5, CoinKind.Silver)));
+        Enemy.enemies.Add(new ScoutEnemy(60, 60, new(1, CoinKind.Silver)));
+        Enemy.enemies.Add(new TerroristEnemy(100, 200));
         // test
     }
 
@@ -132,8 +129,8 @@ public partial class MainForm : System.Windows.Forms.Form
 
             if (player.Bounds.IntersectsWith(currentCoin.Bounds))
             {
-                if (currentCoin.kind == "silver") MainForm.Instance.TotalSilverCoinValues += currentCoin.value;
-                else if (currentCoin.kind == "gold") MainForm.Instance.TotalGoldCoinValues += currentCoin.value;
+                if (currentCoin.kind == CoinKind.Silver) Player.TotalSilverCoinValues += currentCoin.value;
+                else if (currentCoin.kind == CoinKind.Gold) Player.TotalGoldCoinValues += currentCoin.value;
 
                 Coin.coins.RemoveAt(i);
                 currentCoin.Dispose();

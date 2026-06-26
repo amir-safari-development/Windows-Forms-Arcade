@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel;
-using System.Numerics;
 
 namespace Arcade_Game;
 
 internal class Player : PictureBox
 {
     public static List<PlayerBullet> bullets = new();
+
+    public static int TotalSilverCoinValues = 0;
+    public static int TotalGoldCoinValues = 0;
 
     public static Player Instance { get; private set; }
 
