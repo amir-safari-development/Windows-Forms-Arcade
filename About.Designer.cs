@@ -32,6 +32,7 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
+            textBox5 = new TextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -93,15 +94,33 @@
             textBox4.Text = "404522088";
             textBox4.TextAlign = HorizontalAlignment.Center;
             // 
+            // textBox5
+            // 
+            textBox5.BackColor = Color.LightSkyBlue;
+            textBox5.BorderStyle = BorderStyle.None;
+            textBox5.Font = new Font("Comic Sans MS", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox5.Location = new Point(54, 262);
+            textBox5.Margin = new Padding(0);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(699, 144);
+            textBox5.TabIndex = 4;
+            textBox5.Tag = "";
+            textBox5.Text = "                        Created by                                  Microsoft Visual Studio , SQLite DB ,      Pixart and generative Ais , C# & sfxr ";
+            textBox5.TextAlign = HorizontalAlignment.Center;
+            // 
             // About
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.e447c5bdd414dce7b88d3bd7536c9f47;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
+            MaximizeBox = false;
             Name = "About";
             Text = "About";
             Load += About_Load;
@@ -115,5 +134,6 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
+        private TextBox textBox5;
     }
 }
