@@ -53,10 +53,10 @@ internal class Player : PictureBox
 
         this.Image = skin;
         this.SizeMode = PictureBoxSizeMode.StretchImage;
+        this.BackColor = Color.Transparent;
 
         this.Size = new Size(90, 90);
         this.Location = new Point(windowWidth / 2 - 45, windowHeight - 90 - 15);
-        this.BackColor = Color.Transparent;
     }
 
     public void KeyDown(KeyEventArgs e)

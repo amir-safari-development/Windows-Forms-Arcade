@@ -10,22 +10,35 @@ internal abstract class Enemy : PictureBox
 
     public static List<EnemyBullet> bullets = new();
 
-    public Enemy()
+    public Coin coin;
+
+    private string coinKind;
+    private int coinValue;
+
+    public Enemy(string coinKind, int coinValue)
     {
         this.Size = new Size(60, 60);
         this.SizeMode = PictureBoxSizeMode.StretchImage;
         this.BackColor = Color.Transparent;
+        this.coinKind = coinKind;
+        this.coinValue = coinValue;
     }
 
     public new abstract void Move();
 
     public virtual void Shoot() { }
+
+    public void DropCoin()
+    {
+        this.coin = new Coin(coinValue, coinKind, this);
+        Coin.coins.Add(coin);
+    }
 }
 
 class StandardEnemy : Enemy
 {
     private int speed { get; set; } = 2;
-    public StandardEnemy(int startX) : base()
+    public StandardEnemy(string coinKind, int coinValue, int startX) : base(coinKind, coinValue)
     {
         this.Image = Properties.Resources.Enemy_Standard;
         this.Location = new Point(startX - this.Width / 2, 100);
@@ -44,7 +57,7 @@ class ShooterEnemy : Enemy
     private DateTime lastTimeShot = DateTime.MinValue;
     private const int CoolDown = 2000;
 
-    public ShooterEnemy(int startX, int startY) : base() { 
+    public ShooterEnemy(string coinKind, int coinValue, int startX, int startY) : base(coinKind, coinValue) { 
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
         this.Image = Properties.Resources.Enemy_Shooter;
     }
@@ -82,7 +95,7 @@ class ScoutEnemy : Enemy
     private static readonly Random rand = new();
     private DateTime lastInvertTime = DateTime.Now;
 
-    public ScoutEnemy(int startX, int startY) : base()
+    public ScoutEnemy(string coinKind, int coinValue, int startX, int startY) : base(coinKind, coinValue)
     {
         this.Image = Properties.Resources.Enemy_Scout;
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
@@ -110,7 +123,7 @@ class TerroristEnemy : Enemy
 {
     private int speed { get; set; } = 2;
     public override int HealthPoint { get; set; } = 1;
-    public TerroristEnemy(int startX, int startY) : base() {
+    public TerroristEnemy(string coinKind, int coinValue, int startX, int startY) : base(coinKind, coinValue) {
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
         this.Image = Properties.Resources.Enemy_Terrorist;
     }
@@ -140,7 +153,7 @@ class TankEnemy : Enemy
     private const int CoolDown = 2000;
 
     private int invert = 1;
-    public TankEnemy(int startX, int startY) : base()
+    public TankEnemy(string coinKind, int coinValue, int startX, int startY) : base(coinKind, coinValue)
     {
         this.Image = Properties.Resources.Enemy_Tank;
         this.Size = new Size(125, 75);

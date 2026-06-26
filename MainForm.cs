@@ -2,6 +2,9 @@ namespace Arcade_Game;
 
 public partial class MainForm : System.Windows.Forms.Form
 {
+    public int TotalSilverCoinValues = 0;
+    public int TotalGoldCoinValues = 0;
+
     Player player;
     public static MainForm Instance { get; private set; }
 
@@ -24,11 +27,11 @@ public partial class MainForm : System.Windows.Forms.Form
         player = new Player(Properties.Resources.Player_1);
 
         // test
-        Enemy.enemies.Add(new StandardEnemy(100));
-        Enemy.enemies.Add(new TankEnemy(100, 50));
-        Enemy.enemies.Add(new ShooterEnemy(30, 400));
-        Enemy.enemies.Add(new ScoutEnemy(60, 60));
-        Enemy.enemies.Add(new TerroristEnemy(100, 200));
+        Enemy.enemies.Add(new StandardEnemy("gold", 5,100));
+        Enemy.enemies.Add(new TankEnemy("gold", 1, 100, 50));
+        Enemy.enemies.Add(new ShooterEnemy("silver", 5, 30, 400));
+        Enemy.enemies.Add(new ScoutEnemy("silver", 1, 60, 60));
+        Enemy.enemies.Add(new TerroristEnemy("gold", 5, 100, 200));
         // test
     }
 
@@ -91,9 +94,10 @@ public partial class MainForm : System.Windows.Forms.Form
 
                 if (currentEnemy.HealthPoint <= 0)
                 {
+                    currentEnemy.DropCoin();
                     Enemy.enemies.RemoveAt(i);
                     currentEnemy.Dispose();
-
+                    
                     continue;
                 } 
             }
@@ -114,10 +118,25 @@ public partial class MainForm : System.Windows.Forms.Form
                     if (currentEnemy.HealthPoint <= 0)
                     {
                         isEnemyDead = true;
+                        currentEnemy.DropCoin();
                         currentEnemy.Dispose();
                         Enemy.enemies.RemoveAt(i);
                     }
                 }
+            }
+        }
+
+        for (int i = Coin.coins.Count - 1; i >= 0; i--)
+        {
+            Coin currentCoin = Coin.coins[i];
+
+            if (player.Bounds.IntersectsWith(currentCoin.Bounds))
+            {
+                if (currentCoin.kind == "silver") MainForm.Instance.TotalSilverCoinValues += currentCoin.value;
+                else if (currentCoin.kind == "gold") MainForm.Instance.TotalGoldCoinValues += currentCoin.value;
+
+                Coin.coins.RemoveAt(i);
+                currentCoin.Dispose();
             }
         }
 
@@ -138,7 +157,7 @@ public partial class MainForm : System.Windows.Forms.Form
     {
         e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
 
-        if (player != null &&player.HealthPoint > 0)
+        if (player != null && player.HealthPoint > 0)
             e.Graphics.DrawImage(player.Image, player.Bounds);
         
         foreach(var enemy in Enemy.enemies)
@@ -149,5 +168,8 @@ public partial class MainForm : System.Windows.Forms.Form
 
         foreach (var bullet in Enemy.bullets)
             e.Graphics.DrawImage(bullet.Image, bullet.Bounds);
+
+        foreach (var coin in Coin.coins)
+            e.Graphics.DrawImage(coin.Image, coin.Bounds);
     }
 }
