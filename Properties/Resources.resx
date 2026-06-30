@@ -118,29 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Bullet Enemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bullet Enemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shoot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shoot.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Bullet Player" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bullet Player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\theme.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Enemy Scout" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Enemy Scout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Player 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Player 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Enemy Shooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Enemy Shooter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Enemy Standard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Enemy Standard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Enemy Tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Enemy Tank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="6dbeae2d7f877e9b22b0e1d204037235" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6dbeae2d7f877e9b22b0e1d204037235.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Enemy Terrorist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enemy Terrorist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Enemy Shooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Enemy Shooter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Enemy Scout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Enemy Scout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tank.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Enemy Standard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Enemy Standard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bullet Player" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bullet Player.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="explosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\explosion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bullet Enemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bullet Enemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fastinvader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fastinvader.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -148,19 +160,19 @@
   <data name="invaderkilled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invaderkilled.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Enemy Tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Enemy Tank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="e447c5bdd414dce7b88d3bd7536c9f47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e447c5bdd414dce7b88d3bd7536c9f47.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Player 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Player 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Untitled-1 - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled-1 - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shoot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shoot.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tank.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\theme.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="gameTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameTitle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
