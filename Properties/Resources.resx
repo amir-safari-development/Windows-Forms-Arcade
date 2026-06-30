@@ -127,8 +127,8 @@
   <data name="Player 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Player 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="e447c5bdd414dce7b88d3bd7536c9f47" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\e447c5bdd414dce7b88d3bd7536c9f47.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="6dbeae2d7f877e9b22b0e1d204037235" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6dbeae2d7f877e9b22b0e1d204037235.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Enemy Terrorist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enemy Terrorist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,10 +163,16 @@
   <data name="Enemy Tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enemy Tank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="e447c5bdd414dce7b88d3bd7536c9f47" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e447c5bdd414dce7b88d3bd7536c9f47.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Player 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Player 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="6dbeae2d7f877e9b22b0e1d204037235" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6dbeae2d7f877e9b22b0e1d204037235.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Untitled-1 - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled-1 - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gameTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gameTitle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

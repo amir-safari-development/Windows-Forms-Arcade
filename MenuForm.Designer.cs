@@ -34,13 +34,17 @@
             about = new Button();
             Exit = new Button();
             option = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // startGame
             // 
-            startGame.BackColor = SystemColors.ControlDark;
-            startGame.Font = new Font("Courier New", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            startGame.Location = new Point(353, 36);
+            startGame.BackColor = Color.RosyBrown;
+            startGame.BackgroundImageLayout = ImageLayout.Stretch;
+            startGame.Font = new Font("Georgia", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            startGame.ForeColor = Color.White;
+            startGame.Location = new Point(358, 203);
             startGame.Name = "startGame";
             startGame.Size = new Size(116, 46);
             startGame.TabIndex = 0;
@@ -50,9 +54,10 @@
             // 
             // Shop
             // 
-            Shop.BackColor = SystemColors.ControlDark;
-            Shop.Font = new Font("Courier New", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Shop.Location = new Point(353, 121);
+            Shop.BackColor = Color.DarkGoldenrod;
+            Shop.Font = new Font("Georgia", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Shop.ForeColor = Color.Transparent;
+            Shop.Location = new Point(258, 283);
             Shop.Name = "Shop";
             Shop.Size = new Size(116, 46);
             Shop.TabIndex = 1;
@@ -61,9 +66,10 @@
             // 
             // about
             // 
-            about.BackColor = SystemColors.ControlDark;
-            about.Font = new Font("Courier New", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            about.Location = new Point(353, 203);
+            about.BackColor = Color.DarkGreen;
+            about.Font = new Font("Georgia", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            about.ForeColor = Color.White;
+            about.Location = new Point(458, 283);
             about.Name = "about";
             about.Size = new Size(116, 46);
             about.TabIndex = 2;
@@ -73,9 +79,10 @@
             // 
             // Exit
             // 
-            Exit.BackColor = SystemColors.ControlDark;
-            Exit.Font = new Font("Courier New", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Exit.Location = new Point(353, 369);
+            Exit.BackColor = Color.Crimson;
+            Exit.Font = new Font("Georgia", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Exit.ForeColor = Color.White;
+            Exit.Location = new Point(458, 367);
             Exit.Name = "Exit";
             Exit.Size = new Size(116, 46);
             Exit.TabIndex = 3;
@@ -85,14 +92,28 @@
             // 
             // option
             // 
-            option.BackColor = SystemColors.ControlDark;
-            option.Font = new Font("Courier New", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            option.Location = new Point(353, 289);
+            option.BackColor = Color.Navy;
+            option.Font = new Font("Georgia", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            option.ForeColor = Color.White;
+            option.Location = new Point(258, 367);
             option.Name = "option";
             option.Size = new Size(116, 46);
             option.TabIndex = 4;
             option.Text = "Option";
             option.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = Properties.Resources.gameTitle;
+            pictureBox1.Location = new Point(138, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(563, 433);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // MenuForm
             // 
@@ -106,9 +127,12 @@
             Controls.Add(about);
             Controls.Add(Shop);
             Controls.Add(startGame);
+            Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "MenuForm";
             Load += MenuForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -119,5 +143,6 @@
         private Button about;
         private Button Exit;
         private Button option;
+        private PictureBox pictureBox1;
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Timer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // Timer
             // 
-            Timer.Enabled = false;
             Timer.Interval = 20;
             Timer.Tick += TimerEvent;
             // 
@@ -45,6 +45,7 @@
             BackColor = SystemColors.Desktop;
             ClientSize = new Size(1034, 562);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "MainForm";

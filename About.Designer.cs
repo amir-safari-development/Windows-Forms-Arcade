@@ -28,17 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
+            Backbtn = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
             // 
             textBox1.BackColor = Color.FromArgb(128, 255, 255);
             textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Cursor = Cursors.No;
             textBox1.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(215, 48);
             textBox1.Margin = new Padding(3, 4, 3, 3);
@@ -55,6 +60,7 @@
             // 
             textBox2.BackColor = Color.FromArgb(128, 255, 255);
             textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Cursor = Cursors.No;
             textBox2.Font = new Font("Cascadia Code", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox2.Location = new Point(480, 137);
             textBox2.Multiline = true;
@@ -109,21 +115,50 @@
             textBox5.Text = "                        Created by                                  Microsoft Visual Studio , SQLite DB ,      Pixart and generative Ais , C# & sfxr ";
             textBox5.TextAlign = HorizontalAlignment.Center;
             // 
+            // Backbtn
+            // 
+            Backbtn.Font = new Font("Ink Free", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Backbtn.Location = new Point(658, 90);
+            Backbtn.Name = "Backbtn";
+            Backbtn.Size = new Size(103, 86);
+            Backbtn.TabIndex = 5;
+            Backbtn.Text = "Back";
+            Backbtn.UseVisualStyleBackColor = true;
+            Backbtn.Click += button1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.Untitled_1___Copy;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Enabled = false;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Location = new Point(64, 68);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(126, 126);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
             // About
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.e447c5bdd414dce7b88d3bd7536c9f47;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
+            Controls.Add(Backbtn);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "About";
             Text = "About";
             Load += About_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,5 +170,7 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
+        private Button Backbtn;
+        private PictureBox pictureBox1;
     }
 }

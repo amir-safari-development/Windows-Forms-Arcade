@@ -40,5 +40,10 @@ namespace Arcade_Game
             page.Show();
             this.Hide();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

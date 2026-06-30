@@ -169,6 +169,16 @@ namespace Arcade_Game.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameTitle {
+            get {
+                object obj = ResourceManager.GetObject("gameTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream invaderkilled {
@@ -221,6 +231,16 @@ namespace Arcade_Game.Properties {
         internal static System.IO.UnmanagedMemoryStream theme {
             get {
                 return ResourceManager.GetStream("theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_1___Copy {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-1 - Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
