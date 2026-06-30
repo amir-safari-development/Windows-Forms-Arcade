@@ -93,7 +93,6 @@ public partial class MainForm : System.Windows.Forms.Form
                 if (currentEnemy.HealthPoint <= 0)
                 {
                     currentEnemy.DropCoin();
-                    Player.TotalScore += currentEnemy.Score;
                     Enemy.enemies.RemoveAt(i);
                     currentEnemy.Dispose();
                     
@@ -116,12 +115,10 @@ public partial class MainForm : System.Windows.Forms.Form
 
                     if (currentEnemy.HealthPoint <= 0)
                     {
-                        currentEnemy.DropCoin();
-                        Player.TotalScore += currentEnemy.Score;
-                        Enemy.enemies.RemoveAt(i);
-                        currentEnemy.Dispose();
-
                         isEnemyDead = true;
+                        currentEnemy.DropCoin();
+                        currentEnemy.Dispose();
+                        Enemy.enemies.RemoveAt(i);
                     }
                 }
             }
