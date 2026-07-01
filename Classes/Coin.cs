@@ -13,10 +13,10 @@ internal class Coin : PictureBox
 
     public Coin(int value, CoinKind kind, int startX, int startY)
     {
-        if (value == 1 && kind == CoinKind.Silver) this.Image = GameAssets.CoinSilver1;
-        else if (value == 5 && kind == CoinKind.Silver) this.Image = GameAssets.CoinSilver5;
-        else if (value == 1 && kind == CoinKind.Gold) this.Image = GameAssets.CoinGold1;
-        else if (value == 5 && kind == CoinKind.Gold) this.Image = GameAssets.CoinGold5;
+        if (value == 1 && kind == CoinKind.Silver) this.Image = GameAssets.NormalSilver1Coin;
+        else if (value == 5 && kind == CoinKind.Silver) this.Image = GameAssets.NormalSilver5Coin;
+        else if (value == 1 && kind == CoinKind.Gold) this.Image = GameAssets.NormalGolden1Coin;
+        else if (value == 5 && kind == CoinKind.Gold) this.Image = GameAssets.NormalGolden5Coin;
 
         this.value = value;
         this.kind = kind;

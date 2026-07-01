@@ -1,6 +1,6 @@
 ﻿namespace Arcade_Game
 {
-    partial class choose
+    partial class Choose
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Choose));
             NormMode = new Button();
             backBtn = new Button();
             PixMode = new Button();
@@ -67,18 +68,21 @@
             PixMode.Text = "Pixel Mode";
             PixMode.UseVisualStyleBackColor = true;
             // 
-            // choose
+            // Choose
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources._6dbeae2d7f877e9b22b0e1d204037235;
+            BackgroundImage = Properties.Resources.SpaceBackGround;
             ClientSize = new Size(800, 450);
             Controls.Add(PixMode);
             Controls.Add(backBtn);
             Controls.Add(NormMode);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             MinimizeBox = false;
-            Name = "choose";
+            Name = "Choose";
             Text = "choose";
+            Load += choose_Load;
             ResumeLayout(false);
         }
 

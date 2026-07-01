@@ -31,7 +31,10 @@ namespace Arcade_Game.Properties {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-        
+
+        public static Image PixelBulletPlayer { get; internal set; }
+        public static Image PixelBulletEnemy { get; internal set; }
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -61,121 +64,48 @@ namespace Arcade_Game.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap _6dbeae2d7f877e9b22b0e1d204037235 {
+        internal static System.IO.UnmanagedMemoryStream CoinPickup {
             get {
-                object obj = ResourceManager.GetObject("6dbeae2d7f877e9b22b0e1d204037235", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("CoinPickup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Explosion {
+            get {
+                return ResourceManager.GetStream("Explosion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] GameIcon {
+            get {
+                object obj = ResourceManager.GetObject("GameIcon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream GameMusic {
+            get {
+                return ResourceManager.GetStream("GameMusic", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bullet_Enemy {
+        internal static System.Drawing.Bitmap gameTitle {
             get {
-                object obj = ResourceManager.GetObject("Bullet Enemy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Bullet_Player {
-            get {
-                object obj = ResourceManager.GetObject("Bullet Player", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Coin_Gold_1 {
-            get {
-                object obj = ResourceManager.GetObject("Coin Gold 1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Coin_Gold_5 {
-            get {
-                object obj = ResourceManager.GetObject("Coin Gold 5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Coin_Silver_1 {
-            get {
-                object obj = ResourceManager.GetObject("Coin Silver 1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Coin_Silver_5 {
-            get {
-                object obj = ResourceManager.GetObject("Coin Silver 5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Enemy_Scout {
-            get {
-                object obj = ResourceManager.GetObject("Enemy Scout", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Enemy_Shooter {
-            get {
-                object obj = ResourceManager.GetObject("Enemy Shooter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Enemy_Standard {
-            get {
-                object obj = ResourceManager.GetObject("Enemy Standard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Enemy_Tank {
-            get {
-                object obj = ResourceManager.GetObject("Enemy Tank", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Enemy_Terrorist {
-            get {
-                object obj = ResourceManager.GetObject("Enemy Terrorist", resourceCulture);
+                object obj = ResourceManager.GetObject("gameTitle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,36 +113,18 @@ namespace Arcade_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream explosion {
+        internal static System.IO.UnmanagedMemoryStream MenuMusic {
             get {
-                return ResourceManager.GetStream("explosion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream fastinvader {
-            get {
-                return ResourceManager.GetStream("fastinvader", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream invaderkilled {
-            get {
-                return ResourceManager.GetStream("invaderkilled", resourceCulture);
+                return ResourceManager.GetStream("MenuMusic", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Player_1 {
+        internal static System.Drawing.Bitmap NormalBulletEnemy {
             get {
-                object obj = ResourceManager.GetObject("Player 1", resourceCulture);
+                object obj = ResourceManager.GetObject("NormalBulletEnemy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -220,9 +132,249 @@ namespace Arcade_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Player_2 {
+        internal static System.Drawing.Bitmap NormalBulletPlayer {
             get {
-                object obj = ResourceManager.GetObject("Player 2", resourceCulture);
+                object obj = ResourceManager.GetObject("NormalBulletPlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalEnemyScout {
+            get {
+                object obj = ResourceManager.GetObject("NormalEnemyScout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalEnemyShooter {
+            get {
+                object obj = ResourceManager.GetObject("NormalEnemyShooter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalEnemyStandard {
+            get {
+                object obj = ResourceManager.GetObject("NormalEnemyStandard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalEnemyTank {
+            get {
+                object obj = ResourceManager.GetObject("NormalEnemyTank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalEnemyTerrorist {
+            get {
+                object obj = ResourceManager.GetObject("NormalEnemyTerrorist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalGolden1Coin {
+            get {
+                object obj = ResourceManager.GetObject("NormalGolden1Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalGolden5Coin {
+            get {
+                object obj = ResourceManager.GetObject("NormalGolden5Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalPlayer {
+            get {
+                object obj = ResourceManager.GetObject("NormalPlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalSilver1Coin {
+            get {
+                object obj = ResourceManager.GetObject("NormalSilver1Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalSilver5Coin {
+            get {
+                object obj = ResourceManager.GetObject("NormalSilver5Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NormalSpecialPlayer {
+            get {
+                object obj = ResourceManager.GetObject("NormalSpecialPlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelEnemyBullet {
+            get {
+                object obj = ResourceManager.GetObject("PixelEnemyBullet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelEnemyScout {
+            get {
+                object obj = ResourceManager.GetObject("PixelEnemyScout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelEnemyShooter {
+            get {
+                object obj = ResourceManager.GetObject("PixelEnemyShooter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelEnemyStandard {
+            get {
+                object obj = ResourceManager.GetObject("PixelEnemyStandard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelEnemyTank {
+            get {
+                object obj = ResourceManager.GetObject("PixelEnemyTank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelEnemyTerrorist {
+            get {
+                object obj = ResourceManager.GetObject("PixelEnemyTerrorist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelGolden1Coin {
+            get {
+                object obj = ResourceManager.GetObject("PixelGolden1Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelGolden5Coin {
+            get {
+                object obj = ResourceManager.GetObject("PixelGolden5Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelPlayer {
+            get {
+                object obj = ResourceManager.GetObject("PixelPlayer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelPlayerBullet {
+            get {
+                object obj = ResourceManager.GetObject("PixelPlayerBullet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelSilver1Coin {
+            get {
+                object obj = ResourceManager.GetObject("PixelSilver1Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelSilver5Coin {
+            get {
+                object obj = ResourceManager.GetObject("PixelSilver5Coin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PixelSpecialPlayer {
+            get {
+                object obj = ResourceManager.GetObject("PixelSpecialPlayer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -230,27 +382,38 @@ namespace Arcade_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream shoot {
+        internal static System.IO.UnmanagedMemoryStream Shoot {
             get {
-                return ResourceManager.GetStream("shoot", resourceCulture);
+                return ResourceManager.GetStream("Shoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SpaceBackGround {
+            get {
+                object obj = ResourceManager.GetObject("SpaceBackGround", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream tank {
+        internal static System.IO.UnmanagedMemoryStream TheTheme {
             get {
-                return ResourceManager.GetStream("tank", resourceCulture);
+                return ResourceManager.GetStream("TheTheme", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream theme {
+        internal static System.Drawing.Bitmap Untitled_1___Copy {
             get {
-                return ResourceManager.GetStream("theme", resourceCulture);
+                object obj = ResourceManager.GetObject("Untitled-1 - Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

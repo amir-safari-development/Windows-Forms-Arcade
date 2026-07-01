@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Arcade_Game
 {
-    public partial class choose : Form
+    public partial class Choose : Form
     {
-        public choose()
+        public Choose()
         {
             InitializeComponent();
         }
@@ -29,6 +29,11 @@ namespace Arcade_Game
 
             game3.Show();
             this.Hide();
+        }
+
+        private void choose_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

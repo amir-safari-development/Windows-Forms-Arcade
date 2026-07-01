@@ -22,7 +22,7 @@ public partial class MainForm : System.Windows.Forms.Form
 
         this.Paint += MainFormPaint;
 
-        player = new Player(GameAssets.SkinPlayer1);
+        player = new Player(GameAssets.NormalPlayer);
 
         // test
         Enemy.enemies.Add(new StandardEnemy(100, new(5, CoinKind.Gold)));

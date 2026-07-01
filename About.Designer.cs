@@ -33,6 +33,9 @@
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
+            button1 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -109,12 +112,39 @@
             textBox5.Text = "                        Created by                                  Microsoft Visual Studio , SQLite DB ,      Pixart and generative Ais , C# & sfxr ";
             textBox5.TextAlign = HorizontalAlignment.Center;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.DarkSalmon;
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.Font = new Font("Ink Free", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(644, 81);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 108);
+            button1.TabIndex = 5;
+            button1.Text = "back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = Properties.Resources.Untitled_1___Copy;
+            pictureBox1.Location = new Point(54, 66);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(144, 141);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
             // About
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources._6dbeae2d7f877e9b22b0e1d204037235;
+            BackgroundImage = Properties.Resources.SpaceBackGround;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
+            Controls.Add(button1);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
@@ -124,6 +154,7 @@
             Name = "About";
             Text = "About";
             Load += About_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,5 +166,7 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
+        private Button button1;
+        private PictureBox pictureBox1;
     }
 }

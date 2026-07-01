@@ -24,5 +24,13 @@ namespace Arcade_Game
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuForm miow = new MenuForm();
+
+            miow.Show();
+            this.Hide();
+        }
     }
 }

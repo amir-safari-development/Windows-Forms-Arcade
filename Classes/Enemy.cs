@@ -41,7 +41,7 @@ class StandardEnemy : Enemy
     private int speed { get; set; } = 2;
     public StandardEnemy(int startX, CoinSpecification? loot = null) : base(loot)
     {
-        this.Image = GameAssets.EnemyStandard;
+        this.Image = GameAssets.NormalEnemyStandard;
         this.Location = new Point(startX - this.Width / 2, 100);
     }
 
@@ -61,7 +61,7 @@ class ShooterEnemy : Enemy
     public ShooterEnemy(int startX, int startY, CoinSpecification? loot = null) : base(loot)
     { 
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
-        this.Image = GameAssets.EnemyShooter;
+        this.Image = GameAssets.NormalEnemyShooter;
     }
 
     public override void Move()
@@ -99,7 +99,7 @@ class ScoutEnemy : Enemy
 
     public ScoutEnemy(int startX, int startY, CoinSpecification? loot = null) : base(loot)
     {
-        this.Image = GameAssets.EnemyScout;
+        this.Image = GameAssets.NormalEnemyScout;
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
     }
 
@@ -128,7 +128,7 @@ class TerroristEnemy : Enemy
     public TerroristEnemy(int startX, int startY, CoinSpecification? loot = null) : base(loot)
     {
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
-        this.Image = GameAssets.EnemyTerrorist;
+        this.Image = GameAssets.NormalEnemyTerrorist;
     }
 
     public override void Move()
@@ -158,7 +158,7 @@ class TankEnemy : Enemy
     private int invert = 1;
     public TankEnemy(int startX, int startY, CoinSpecification? loot = null) : base(loot)
     {
-        this.Image = GameAssets.EnemyTank;
+        this.Image = GameAssets.NormalEnemyTank;
         this.Size = new Size(125, 75);
         this.Location = new Point(startX - this.Width / 2, startY - this.Height / 2);
     }

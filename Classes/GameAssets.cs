@@ -1,21 +1,62 @@
-﻿namespace Arcade_Game;
+﻿using System.Media;
+namespace Arcade_Game;
 
 internal class GameAssets
 {
-    public static readonly Image CoinSilver1 = Properties.Resources.Coin_Silver_1;
-    public static readonly Image CoinSilver5 = Properties.Resources.Coin_Silver_5;
-    public static readonly Image CoinGold1 = Properties.Resources.Coin_Gold_1;
-    public static readonly Image CoinGold5 = Properties.Resources.Coin_Gold_5;
+    public static readonly SoundPlayer CoinPickup = new SoundPlayer(Properties.Resources.CoinPickup);
+    public static readonly SoundPlayer Explosion = new SoundPlayer(Properties.Resources.Explosion);
+    public static readonly SoundPlayer Shoot = new SoundPlayer(Properties.Resources.Shoot);
+    public static readonly SoundPlayer TheTheme = new SoundPlayer(Properties.Resources.TheTheme);
+    public static readonly SoundPlayer MenuMusic = new SoundPlayer(Properties.Resources.MenuMusic);
+    public static readonly SoundPlayer GameMusic = new SoundPlayer(Properties.Resources.GameMusic);
 
-    public static readonly Image EnemyStandard = Properties.Resources.Enemy_Standard;
-    public static readonly Image EnemyShooter = Properties.Resources.Enemy_Shooter;
-    public static readonly Image EnemyScout = Properties.Resources.Enemy_Scout;
-    public static readonly Image EnemyTerrorist = Properties.Resources.Enemy_Terrorist;
-    public static readonly Image EnemyTank = Properties.Resources.Enemy_Tank;
 
-    public static readonly Image SkinPlayer1 = Properties.Resources.Player_1;
-    public static readonly Image SkinPlayer2 = Properties.Resources.Player_2;
 
-    public static readonly Image BulletPlayer = Properties.Resources.Bullet_Player;
-    public static readonly Image BulletEnemy = Properties.Resources.Bullet_Enemy;
+    public static readonly Image gameTitle = Properties.Resources.gameTitle;
+    public static readonly Image SpaceBackGround = Properties.Resources.SpaceBackGround;
+    public static readonly byte[] GameIcon = Properties.Resources.GameIcon;
+
+
+
+    public static readonly Image NormalSilver1Coin = Properties.Resources.NormalSilver1Coin;
+    public static readonly Image NormalSilver5Coin = Properties.Resources.NormalSilver5Coin;
+    public static readonly Image NormalGolden1Coin = Properties.Resources.NormalGolden1Coin;
+    public static readonly Image NormalGolden5Coin = Properties.Resources.NormalGolden5Coin;
+
+    public static readonly Image NormalEnemyStandard = Properties.Resources.NormalEnemyStandard;
+    public static readonly Image NormalEnemyShooter = Properties.Resources.NormalEnemyShooter;
+    public static readonly Image NormalEnemyScout = Properties.Resources.NormalEnemyScout;
+    public static readonly Image NormalEnemyTerrorist = Properties.Resources.NormalEnemyTerrorist;
+    public static readonly Image NormalEnemyTank = Properties.Resources.NormalEnemyTank;
+
+    public static readonly Image NormalPlayer = Properties.Resources.NormalPlayer;
+    public static readonly Image NormalSpecialPlayer = Properties.Resources.NormalSpecialPlayer;
+
+    public static readonly Image NormalBulletPlayer = Properties.Resources.NormalBulletPlayer;
+    public static readonly Image NormalBulletEnemy = Properties.Resources.NormalBulletEnemy;
+
+
+
+
+
+    public static readonly Image PixelSilver1Coin = Properties.Resources.PixelSilver1Coin;
+    public static readonly Image PixelSilver5Coin = Properties.Resources.PixelSilver5Coin;
+    public static readonly Image PixelGolden1Coin = Properties.Resources.PixelGolden1Coin;
+    public static readonly Image PixelGolden5Coin = Properties.Resources.PixelGolden5Coin;
+
+    public static readonly Image PixelEnemyStandard = Properties.Resources.PixelEnemyStandard;
+    public static readonly Image PixelEnemyShooter = Properties.Resources.PixelEnemyShooter;
+    public static readonly Image PixelEnemyScout = Properties.Resources.PixelEnemyScout;
+    public static readonly Image PixelEnemyTerrorist = Properties.Resources.PixelEnemyTerrorist;
+    public static readonly Image PixelEnemyTank = Properties.Resources.PixelEnemyTank;
+
+    public static readonly Image PixelPlayer = Properties.Resources.PixelPlayer;
+    public static readonly Image PixelSpecialPlayer = Properties.Resources.PixelSpecialPlayer;
+
+    public static readonly Image PixelBulletPlayer = Properties.Resources.PixelBulletPlayer;
+    public static readonly Image PixelBulletEnemy = Properties.Resources.PixelBulletEnemy;
+
+
+
+
 }

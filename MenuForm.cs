@@ -22,7 +22,7 @@ namespace Arcade_Game
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            choose game = new choose();
+            Choose game = new Choose();
 
             game.Show();
             this.Hide();
