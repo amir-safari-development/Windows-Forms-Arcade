@@ -63,6 +63,16 @@ namespace Arcade_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6dbeae2d7f877e9b22b0e1d204037235 {
+            get {
+                object obj = ResourceManager.GetObject("6dbeae2d7f877e9b22b0e1d204037235", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bullet_Enemy {
             get {
                 object obj = ResourceManager.GetObject("Bullet Enemy", resourceCulture);
@@ -189,6 +199,16 @@ namespace Arcade_Game.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameTitle {
+            get {
+                object obj = ResourceManager.GetObject("gameTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream invaderkilled {
@@ -241,6 +261,16 @@ namespace Arcade_Game.Properties {
         internal static System.IO.UnmanagedMemoryStream theme {
             get {
                 return ResourceManager.GetStream("theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_1___Copy {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-1 - Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

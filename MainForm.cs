@@ -12,6 +12,7 @@ public partial class MainForm : System.Windows.Forms.Form
         this.DoubleBuffered = true;
 
         SetupGame();
+        Timer.Start();
     }
 
     private void SetupGame()
@@ -76,7 +77,7 @@ public partial class MainForm : System.Windows.Forms.Form
             }
         }
 
-        for (int i = Enemy.enemies.Count - 1; i >= 0;i--)
+        for (int i = Enemy.enemies.Count - 1; i >= 0; i--)
         {
             bool isEnemyDead = false;
 
@@ -97,7 +98,7 @@ public partial class MainForm : System.Windows.Forms.Form
                     currentEnemy.Dispose();
                     
                     continue;
-                } 
+                }
             }
 
             for (int j = Player.bullets.Count - 1; j >= 0; j--)
@@ -145,7 +146,7 @@ public partial class MainForm : System.Windows.Forms.Form
 
     private void MainFormKeyDown(object sender, KeyEventArgs e)
     {
-        player.KeyDown(e); 
+        player.KeyDown(e);
     }
 
     private void MainFormKeyUp(object sender, KeyEventArgs e)
@@ -159,11 +160,11 @@ public partial class MainForm : System.Windows.Forms.Form
 
         if (player != null && player.HealthPoint > 0)
             e.Graphics.DrawImage(player.Image, player.Bounds);
-        
-        foreach(var enemy in Enemy.enemies)
+
+        foreach (var enemy in Enemy.enemies)
             e.Graphics.DrawImage(enemy.Image, enemy.Bounds);
 
-        foreach(var bullet in Player.bullets) 
+        foreach (var bullet in Player.bullets)
             e.Graphics.DrawImage(bullet.Image, bullet.Bounds);
 
         foreach (var bullet in Enemy.bullets)
@@ -171,5 +172,10 @@ public partial class MainForm : System.Windows.Forms.Form
 
         foreach (var coin in Coin.coins)
             e.Graphics.DrawImage(coin.Image, coin.Bounds);
+    }
+
+    private void MainForm_Load(object sender, EventArgs e)
+    {
+
     }
 }

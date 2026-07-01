@@ -29,25 +29,28 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             Timer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // Timer
             // 
-            Timer.Enabled = true;
             Timer.Interval = 20;
             Timer.Tick += TimerEvent;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Desktop;
-            ClientSize = new Size(1182, 853);
+            ClientSize = new Size(1034, 562);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "MainForm";
             Text = "Space Invaders";
+            Load += MainForm_Load;
             ResumeLayout(false);
         }
 
